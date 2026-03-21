@@ -34,7 +34,7 @@ article img,
 /* 1. 进一步调宽右侧栏，给长标题更多空间 */
 @media (min-width: 1280px) {
   .VPDocAside {
-    width: 256px !important; 
+    width: 320px !important; 
   }
 }
 
