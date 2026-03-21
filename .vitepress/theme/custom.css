@@ -31,32 +31,42 @@ article img,
   margin-bottom: 1.5rem;
 }
 
-/* 1. 进一步调宽右侧栏，给长标题更多空间 */
+/* 1. 进一步调宽右侧栏，给长标题腾出物理空间 */
 @media (min-width: 1280px) {
   .VPDocAside {
     width: 320px !important; 
   }
 }
 
-/* 2. 彻底禁止省略号，强制文字完整显示并换行 */
+/* 2. 彻底解决文字截断和省略号问题 */
 .VPDocAside .outline-link {
-  white-space: normal !important;      /* 允许换行 */
-  overflow: visible !important;        /* 允许文字溢出容器边界显示 */
-  text-overflow: clip !important;      /* 彻底切断省略号逻辑 */
-  display: block !important;           /* 确保是块级显示 */
-  padding-right: 0 !important;         /* 挤掉右边的内边距，腾出空间 */
-  word-break: break-word !important;   /* 遇到超长单词自动折行 */
+  /* 允许换行 */
+  white-space: normal !important; 
+  /* 彻底禁用省略号 */
+  text-overflow: clip !important; 
+  /* 允许容器内的内容溢出显示 */
+  overflow: visible !important; 
+  /* 确保块级显示以支持换行 */
+  display: block !important; 
+  /* 调整行高，防止换行后文字重叠 */
+  line-height: 1.5 !important; 
+  /* 增加内边距，防止文字贴边 */
+  padding: 6px 0 !important; 
+  /* 强制在单词内断行，防止超长单词（如 Ferromagnetic）撑破容器 */
+  word-break: break-word !important; 
 }
 
-/* 3. 针对嵌套的子标题，也要保证不被遮挡 */
-.VPDocAside .outline-item {
+/* 3. 强制覆盖父级容器的隐藏属性（这是解决“Gap”不见的关键） */
+.VPDocAside .outline-item,
+.VPDocAside .outline-list,
+.VPDocAside .content {
   overflow: visible !important;
 }
 
-.VPDocAside .outline-link {
-  white-space: normal !important; /* 允许换行 */
-  line-height: 1.4 !important;   /* 调整换行后的行高 */
-  padding: 4px 0 !important;     /* 增加一点上下间距，防止文字挤在一起 */
+/* 4. 解决层级缩进导致的空间不足 */
+.VPDocAside .outline-link.nested {
+  /* 稍微减少深层目录的左缩进，为文字争取更多宽度 */
+  padding-left: 12px !important; 
 }
 
 /* 当处于深色模式（Dark Mode）时 */
