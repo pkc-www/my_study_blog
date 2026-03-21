@@ -31,33 +31,39 @@ article img,
   margin-bottom: 1.5rem;
 }
 
-/* 1. 解除 200px 的封印，强制扩大侧边栏内部容器宽度 */
-.VPDoc .aside,
-nav.VPDocAsideOutline {
-  width: 100% !important;
-  min-width: 280px !important; /* 强制保底宽度，给文字留足空间 */
+/* =======================================
+   侧边栏大纲：终极换行防遮挡代码
+======================================= */
+
+/* 1. 扩大整体页面和侧边栏宽度 */
+:root {
+  --vp-layout-max-width: 1500px !important; 
 }
 
-/* 2. 直接锁定截图中的元素层级，暴力破除“不换行” */
-nav.VPDocAsideOutline a.outline-link,
-.VPDocOutlineItem a,
-.VPDocOutlineItem .outline-link {
-  white-space: normal !important;      /* 强制换行 */
-  word-wrap: break-word !important;    /* 单词过长强制折断 */
-  overflow: visible !important;        /* 禁止隐藏超出的文字 */
+@media (min-width: 1280px) {
+  html body .VPDocAside {
+    width: 380px !important; 
+  }
+}
+
+/* 2. 最高权重：暴力破解不换行和省略号 */
+html body nav.VPDocAsideOutline .outline-link {
+  white-space: normal !important;      /* 强制允许换行 */
+  overflow: visible !important;        /* 解除溢出隐藏 */
   text-overflow: unset !important;     /* 关掉省略号 */
-  display: block !important;           /* 确保块级显示 */
-  line-height: 1.5 !important;         /* 换行后行间距拉开一点 */
-  padding-top: 4px !important;         
-  padding-bottom: 4px !important;
+  word-wrap: break-word !important;    /* 长单词折行 */
+  display: block !important;
+  line-height: 1.5 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
 }
 
-/* 3. 确保外层列表 ul 和 li 不会切断文字 */
-ul.VPDocOutlineItem,
-li {
+/* 3. 解除父级列表的封印 */
+html body nav.VPDocAsideOutline ul,
+html body nav.VPDocAsideOutline li,
+html body nav.VPDocAsideOutline .root {
   overflow: visible !important;
 }
-
 /* 当处于深色模式（Dark Mode）时 */
 .dark img:not([src$=".svg"]) {
   /* invert(0.9) 将颜色反转 90%，留一点灰度看起来更柔和 */
