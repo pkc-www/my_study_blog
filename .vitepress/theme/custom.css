@@ -31,46 +31,31 @@ article img,
   margin-bottom: 1.5rem;
 }
 
-/* 1. 扩大整体容器的呼吸空间 */
-:root {
-  --vp-layout-max-width: 1500px !important; /* 让整个网页变宽一点 */
-}
-
-/* 2. 调宽右侧侧边栏 (针对大屏幕) */
-@media (min-width: 1280px) {
-  .VPDocAside {
-    width: 400px !important; /* 宽度调到 380px */
-  }
-  .VPDocAside .content {
-    width: 380px !important;
-    padding-left: 16px !important; /* 给左侧留点距离 */
-  }
-}
-
-/* 3. 核心：强制解除所有“不换行”和“隐藏”限制 */
-.VPDocAside .outline-link {
-  display: block !important;           /* 必须是 block 才能正常换行 */
-  white-space: normal !important;      /* 强制允许换行 */
-  text-overflow: initial !important;   /* 彻底移除省略号 */
-  overflow: visible !important;        /* 允许文字溢出 */
-  height: auto !important;             /* 高度随文字增长 */
-  line-height: 1.5 !important;         /* 增加行高，防止换行后文字打架 */
-  padding: 5px 0 !important;           /* 增加上下间距 */
-  word-break: break-word !important;   /* 遇到长单词强制折行 */
-}
-
-/* 4. 重点：VitePress 的 li 和 ul 默认会限制宽度，必须全部解锁 */
-.VPDocAside .outline-item,
-.VPDocAside .outline-list,
-.VPDocAside .outline-link-container {
+/* 1. 解除 200px 的封印，强制扩大侧边栏内部容器宽度 */
+.VPDoc .aside,
+nav.VPDocAsideOutline {
   width: 100% !important;
-  max-width: 100% !important;
-  overflow: visible !important;        /* 防止父级截断 */
+  min-width: 280px !important; /* 强制保底宽度，给文字留足空间 */
 }
 
-/* 5. 调整层级缩进，为文字腾出更多右侧空间 */
-.VPDocAside .outline-link.nested {
-  padding-left: 14px !important;       /* 稍微减少二级目录的缩进 */
+/* 2. 直接锁定截图中的元素层级，暴力破除“不换行” */
+nav.VPDocAsideOutline a.outline-link,
+.VPDocOutlineItem a,
+.VPDocOutlineItem .outline-link {
+  white-space: normal !important;      /* 强制换行 */
+  word-wrap: break-word !important;    /* 单词过长强制折断 */
+  overflow: visible !important;        /* 禁止隐藏超出的文字 */
+  text-overflow: unset !important;     /* 关掉省略号 */
+  display: block !important;           /* 确保块级显示 */
+  line-height: 1.5 !important;         /* 换行后行间距拉开一点 */
+  padding-top: 4px !important;         
+  padding-bottom: 4px !important;
+}
+
+/* 3. 确保外层列表 ul 和 li 不会切断文字 */
+ul.VPDocOutlineItem,
+li {
+  overflow: visible !important;
 }
 
 /* 当处于深色模式（Dark Mode）时 */
