@@ -1,0 +1,62 @@
+/* 让 SVG 在浅色模式下反色显示 */
+html:not(.dark) img[src$=".svg"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* 将图片转为块级元素并自动平分左右边距 */
+article img,
+.post-content img,
+.entry-content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* 保证大图不会超出手机屏幕 */
+    height: auto;
+}
+
+
+
+/* 让笔记中的图片自动居中并限制最大宽度 */
+.vp-doc img {
+  display: block;      /* 变成块级元素 */
+  margin: 0 auto;     /* 左右外边距自动，实现居中 */
+  max-width: 80%;     /* 限制宽度为正文的 80%，防止图片太大 */
+  border-radius: 8px; /* 可选：给图片加点圆角更美观 */
+}
+
+/* 针对 SVG 特别优化 */
+.vp-doc img[src$=".svg"] {
+  width: auto;         /* 保持原始比例 */
+  margin-top: 1.5rem;  /* 增加上下间距，让排版更疏朗 */
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1280px) {
+  .VPDocAside {
+    width: 256px !important; /* 默认是 256px，你可以改成 320px 或更多 */
+  }
+}
+
+.VPDocAside .outline-link {
+  white-space: normal !important; /* 允许换行 */
+  line-height: 1.4 !important;   /* 调整换行后的行高 */
+  padding: 4px 0 !important;     /* 增加一点上下间距，防止文字挤在一起 */
+}
+
+/* 当处于深色模式（Dark Mode）时 */
+.dark img:not([src$=".svg"]) {
+  /* invert(0.9) 将颜色反转 90%，留一点灰度看起来更柔和 */
+  /* hue-rotate(180deg) 修正反转带来的色偏 */
+  filter: invert(0.9) hue-rotate(180deg);
+  
+  /* 混合模式可以进一步消除白边（可选） */
+  mix-blend-mode: lighten; 
+  
+  /* 增加过渡动画，切换黑白模式时更平滑 */
+  transition: filter 0.3s ease;
+}
+
+/* 鼠标悬停时恢复原样（可选，方便看原图） */
+.dark img:hover {
+  filter: none;
+}

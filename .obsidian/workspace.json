@@ -1,0 +1,246 @@
+{
+  "main": {
+    "id": "3caacdfe6c7b2036",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e1e82b990cb5921",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f97fde859e7cc5df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "28bf84547faaedb2",
+    "type": "split",
+    "children": [
+      {
+        "id": "77acdcf6bc95e032",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1fb5467b4812f57",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1fbeae0d8bddbcbd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "5b2b73b5134244e0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d394cdb6cd467d32",
+    "type": "split",
+    "children": [
+      {
+        "id": "885e1aeb9336cd89",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4d87ec4bb242de8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "电磁场/电磁场笔记.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "电磁场笔记 的反向链接列表"
+            }
+          },
+          {
+            "id": "c8aeb07feb199f82",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "复变函数/复变函数.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "复变函数 的出链列表"
+            }
+          },
+          {
+            "id": "184afb9d36036963",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "eff288d0002a6cd4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "ee939348c7f5e542",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "复变函数/复变函数.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "复变函数 的大纲"
+            }
+          },
+          {
+            "id": "0dac2b6c432adbe7",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "copilot:Open Copilot Chat": false
+    }
+  },
+  "active": "f97fde859e7cc5df",
+  "lastOpenFiles": [
+    "电机学/电机学（英）.md",
+    "电机学/图片",
+    "未命名.md",
+    "电机学",
+    "复变函数/复变函数.md",
+    "电磁场/场论.md",
+    "电磁场/电磁场笔记.md",
+    "node_modules/katex/node_modules/commander/esm.mjs",
+    "node_modules/katex/contrib/auto-render/test/auto-render-spec.ts",
+    "node_modules/katex/contrib/render-a11y-string/test/render-a11y-string-spec.ts",
+    "node_modules/katex/contrib/auto-render/test",
+    "node_modules/katex/contrib/auto-render/splitAtDelimiters.ts",
+    "node_modules/katex/contrib/auto-render/README.md",
+    "node_modules/katex/contrib/auto-render/index.html",
+    "node_modules/katex/contrib/auto-render/auto-render.ts",
+    "node_modules/katex/contrib/render-a11y-string/render-a11y-string.ts",
+    "node_modules/katex/contrib/mhchem/README.md",
+    "node_modules/katex/contrib/mathtex-script-type/README.md",
+    "node_modules/katex/contrib/copy-tex/README.md",
+    "node_modules/katex/node_modules/commander/Readme.md",
+    "node_modules/katex/dist/README.md",
+    "node_modules/katex/src/metrics/README.md",
+    "电磁场/图片/ffad22223ca217f249dc7485b90df48c.jpg",
+    "电磁场/图片/6dd863f403ac84c5c6d245224cde6a74.jpg",
+    "电磁场/图片/2b882f16d694e7f491a9228cc3e8e5ea.jpg",
+    "电磁场/图片/33e7ef073ea6d18af3be73dab7732036.jpg",
+    "电磁场/图片/949a65fe7445a0e3ba1fe13be6699573.jpg",
+    "电磁场/图片/08555a24afc38c03ca0a1beae0388d54.jpg",
+    "电磁场/图片/ba3b41f306e2a3f0abc9264d8480ea6a.jpg",
+    "电磁场/图片/a239c7bd36573ae424c375ff6c6cccd3.jpg",
+    "电磁场/图片/a10a785c86a5984d4ce9bc91b00724bf.jpg",
+    "crop_605_56_1000_716.md",
+    "电磁场/图片/7dfc00470a5fee750176b00586240bc3.jpg",
+    "crop_535_46_711_343.md",
+    "电路原理/电路基本知识.md",
+    "copilot/copilot-conversations/端口是什么@20260318_124846.md",
+    "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot/copilot-custom-prompts/Remove URLs.md",
+    "copilot/copilot-custom-prompts/Generate glossary.md",
+    "copilot/copilot-custom-prompts/Generate table of contents.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-custom-prompts/Make shorter.md"
+  ]
+}
