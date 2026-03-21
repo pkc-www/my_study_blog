@@ -31,42 +31,46 @@ article img,
   margin-bottom: 1.5rem;
 }
 
-/* 1. 进一步调宽右侧栏，给长标题腾出物理空间 */
+/* 1. 扩大整体容器的呼吸空间 */
+:root {
+  --vp-layout-max-width: 1500px !important; /* 让整个网页变宽一点 */
+}
+
+/* 2. 调宽右侧侧边栏 (针对大屏幕) */
 @media (min-width: 1280px) {
   .VPDocAside {
-    width: 320px !important; 
+    width: 380px !important; /* 宽度调到 380px */
+  }
+  .VPDocAside .content {
+    width: 380px !important;
+    padding-left: 16px !important; /* 给左侧留点距离 */
   }
 }
 
-/* 2. 彻底解决文字截断和省略号问题 */
+/* 3. 核心：强制解除所有“不换行”和“隐藏”限制 */
 .VPDocAside .outline-link {
-  /* 允许换行 */
-  white-space: normal !important; 
-  /* 彻底禁用省略号 */
-  text-overflow: clip !important; 
-  /* 允许容器内的内容溢出显示 */
-  overflow: visible !important; 
-  /* 确保块级显示以支持换行 */
-  display: block !important; 
-  /* 调整行高，防止换行后文字重叠 */
-  line-height: 1.5 !important; 
-  /* 增加内边距，防止文字贴边 */
-  padding: 6px 0 !important; 
-  /* 强制在单词内断行，防止超长单词（如 Ferromagnetic）撑破容器 */
-  word-break: break-word !important; 
+  display: block !important;           /* 必须是 block 才能正常换行 */
+  white-space: normal !important;      /* 强制允许换行 */
+  text-overflow: initial !important;   /* 彻底移除省略号 */
+  overflow: visible !important;        /* 允许文字溢出 */
+  height: auto !important;             /* 高度随文字增长 */
+  line-height: 1.5 !important;         /* 增加行高，防止换行后文字打架 */
+  padding: 5px 0 !important;           /* 增加上下间距 */
+  word-break: break-word !important;   /* 遇到长单词强制折行 */
 }
 
-/* 3. 强制覆盖父级容器的隐藏属性（这是解决“Gap”不见的关键） */
+/* 4. 重点：VitePress 的 li 和 ul 默认会限制宽度，必须全部解锁 */
 .VPDocAside .outline-item,
 .VPDocAside .outline-list,
-.VPDocAside .content {
-  overflow: visible !important;
+.VPDocAside .outline-link-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;        /* 防止父级截断 */
 }
 
-/* 4. 解决层级缩进导致的空间不足 */
+/* 5. 调整层级缩进，为文字腾出更多右侧空间 */
 .VPDocAside .outline-link.nested {
-  /* 稍微减少深层目录的左缩进，为文字争取更多宽度 */
-  padding-left: 12px !important; 
+  padding-left: 14px !important;       /* 稍微减少二级目录的缩进 */
 }
 
 /* 当处于深色模式（Dark Mode）时 */
