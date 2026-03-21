@@ -33,7 +33,7 @@ article img,
 
 @media (min-width: 1280px) {
   .VPDocAside {
-    width: 256px !important; /* 默认是 256px，你可以改成 320px 或更多 */
+    width: 270px !important; /* 默认是 256px，你可以改成 320px 或更多 */
   }
 }
 
