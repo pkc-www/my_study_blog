@@ -39,7 +39,7 @@ article img,
 /* 2. 调宽右侧侧边栏 (针对大屏幕) */
 @media (min-width: 1280px) {
   .VPDocAside {
-    width: 380px !important; /* 宽度调到 380px */
+    width: 200px !important; /* 宽度调到 380px */
   }
   .VPDocAside .content {
     width: 380px !important;
