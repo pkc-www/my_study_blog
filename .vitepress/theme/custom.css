@@ -36,28 +36,43 @@ article img,
 ======================================= */
 
 :root {
-  /* 1. 让网页中间的阅读区变得更宽一点 */
-  --vp-layout-max-width: 1400px !important; 
-  
-  /* 2. 核心大招：直接修改右侧边栏的底层固定宽度变量！ */
-  --vp-aside-width: 350px !important; 
+  --vp-layout-max-width: 1400px !important;
+  --vp-aside-width: 350px !important;
 }
 
-/* 3. 最极简的暴力换行（不需要写一长串前缀了） */
+/* 大纲容器本身允许完整显示内容 */
+.VPDocAsideOutline,
+.VPDocAsideOutline .content,
+.VPDocAsideOutline .outline,
+.VPDocAsideOutline .outline-link {
+  overflow: visible !important;
+}
+
+/* 每一项链接：给足宽度并允许换行 */
 .VPDocAsideOutline a.outline-link {
-  white-space: normal !important;      /* 允许换行 */
-  word-wrap: break-word !important;    /* 长单词折断 */
-  display: block !important;           /* 块级显示 */
-  line-height: 1.6 !important;         /* 加大行距，防止换行后拥挤 */
-  padding-top: 6px !important;
-  padding-bottom: 6px !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;   /* 比 break-word 更现代 */
+  word-break: break-word !important;
+  line-height: 1.6 !important;
+
+  padding: 6px 0 !important;
 }
 
-/* 4. 去掉 VitePress 默认对多行文字做的隐藏截断 */
+/* 关闭默认截断（如果主题里有） */
+.VPDocAsideOutline a.outline-link .text {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* marker 彻底去掉，避免压住文字 */
 .VPDocAsideOutline .outline-marker {
-  display: none !important; /* 隐藏那个蓝色的小竖条（因为它可能会因为换行错位） */
+  display: none !important;
 }
-
 /* 当处于深色模式（Dark Mode）时 */
 .dark img:not([src$=".svg"]) {
   /* invert(0.9) 将颜色反转 90%，留一点灰度看起来更柔和 */
