@@ -36,7 +36,7 @@ article img,
 ======================================= */
 
 :root {
-  --vp-layout-max-width: 1400px !important;
+  --vp-layout-max-width: 1500px !important;
   --vp-aside-width: 420px !important;
 }
 
@@ -49,17 +49,16 @@ article img,
 }
 
 /* 每一项链接：给足宽度并允许换行 */
+/* 右侧大纲链接占满可用宽度，避免“看起来没变宽” */
 .VPDocAsideOutline a.outline-link {
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
 
   white-space: normal !important;
-  overflow-wrap: anywhere !important;   /* 比 break-word 更现代 */
+  overflow-wrap: anywhere !important;
   word-break: break-word !important;
   line-height: 1.6 !important;
-
-  padding: 6px 0 !important;
 }
 
 /* 关闭默认截断（如果主题里有） */
