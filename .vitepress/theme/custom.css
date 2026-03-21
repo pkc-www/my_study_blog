@@ -32,38 +32,32 @@ article img,
 }
 
 /* =======================================
-   侧边栏大纲：终极换行防遮挡代码
+   侧边栏大纲：直接修改底层 CSS 变量
 ======================================= */
 
-/* 1. 扩大整体页面和侧边栏宽度 */
 :root {
-  --vp-layout-max-width: 1500px !important; 
+  /* 1. 让网页中间的阅读区变得更宽一点 */
+  --vp-layout-max-width: 1400px !important; 
+  
+  /* 2. 核心大招：直接修改右侧边栏的底层固定宽度变量！ */
+  --vp-aside-width: 350px !important; 
 }
 
-@media (min-width: 1280px) {
-  html body .VPDocAside {
-    width: 380px !important; 
-  }
-}
-
-/* 2. 最高权重：暴力破解不换行和省略号 */
-html body nav.VPDocAsideOutline .outline-link {
-  white-space: normal !important;      /* 强制允许换行 */
-  overflow: visible !important;        /* 解除溢出隐藏 */
-  text-overflow: unset !important;     /* 关掉省略号 */
-  word-wrap: break-word !important;    /* 长单词折行 */
-  display: block !important;
-  line-height: 1.5 !important;
+/* 3. 最极简的暴力换行（不需要写一长串前缀了） */
+.VPDocAsideOutline a.outline-link {
+  white-space: normal !important;      /* 允许换行 */
+  word-wrap: break-word !important;    /* 长单词折断 */
+  display: block !important;           /* 块级显示 */
+  line-height: 1.6 !important;         /* 加大行距，防止换行后拥挤 */
   padding-top: 6px !important;
   padding-bottom: 6px !important;
 }
 
-/* 3. 解除父级列表的封印 */
-html body nav.VPDocAsideOutline ul,
-html body nav.VPDocAsideOutline li,
-html body nav.VPDocAsideOutline .root {
-  overflow: visible !important;
+/* 4. 去掉 VitePress 默认对多行文字做的隐藏截断 */
+.VPDocAsideOutline .outline-marker {
+  display: none !important; /* 隐藏那个蓝色的小竖条（因为它可能会因为换行错位） */
 }
+
 /* 当处于深色模式（Dark Mode）时 */
 .dark img:not([src$=".svg"]) {
   /* invert(0.9) 将颜色反转 90%，留一点灰度看起来更柔和 */
