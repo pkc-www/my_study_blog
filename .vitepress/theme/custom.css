@@ -31,10 +31,26 @@ article img,
   margin-bottom: 1.5rem;
 }
 
+/* 1. 进一步调宽右侧栏，给长标题更多空间 */
 @media (min-width: 1280px) {
   .VPDocAside {
-    width: 270px !important; /* 默认是 256px，你可以改成 320px 或更多 */
+    width: 256px !important; 
   }
+}
+
+/* 2. 彻底禁止省略号，强制文字完整显示并换行 */
+.VPDocAside .outline-link {
+  white-space: normal !important;      /* 允许换行 */
+  overflow: visible !important;        /* 允许文字溢出容器边界显示 */
+  text-overflow: clip !important;      /* 彻底切断省略号逻辑 */
+  display: block !important;           /* 确保是块级显示 */
+  padding-right: 0 !important;         /* 挤掉右边的内边距，腾出空间 */
+  word-break: break-word !important;   /* 遇到超长单词自动折行 */
+}
+
+/* 3. 针对嵌套的子标题，也要保证不被遮挡 */
+.VPDocAside .outline-item {
+  overflow: visible !important;
 }
 
 .VPDocAside .outline-link {
