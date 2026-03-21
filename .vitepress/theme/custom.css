@@ -37,7 +37,7 @@ article img,
 
 :root {
   --vp-layout-max-width: 1400px !important;
-  --vp-aside-width: 350px !important;
+  --vp-aside-width: 420px !important;
 }
 
 /* 大纲容器本身允许完整显示内容 */
